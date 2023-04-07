@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="22dp"
+    android:orientation="horizontal"
+    android:background="#E9E8FA"
+    android:layout_marginTop="22dp"
+    android:layout_marginRight="22dp">
+
+
+    <LinearLayout
+        android:id="@+id/bookingsPreviewTemplate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/eventNametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="10sp"
+            android:text="Event Name" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:orientation="horizontal"
+            >
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="Event Code:"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/dateSlotPrv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="1234"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="Venue     :"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/venueTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="SDMA"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="Date     :"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="Apr 28 2023"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="Detail:"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/eventDetailTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginStart="12dp"
+                android:text="International conferemce on networks and computoings sdjknmds"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+
+
+
+
+<Button
+    android:id="@+id/registerEventBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="10sp"
+    android:layout_marginLeft="33dp"
+    android:layout_marginTop="6dp"
+    android:visibility="visible"
+    android:text="Register"
+    />
+
+
+
+        <Button
+            android:id="@+id/deregisterEventBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:text="DeRegister"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>
