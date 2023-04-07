@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "742223196820",
+    "firebase_url": "https://eventmanagementsystem-b1886-default-rtdb.firebaseio.com",
+    "project_id": "eventmanagementsystem-b1886",
+    "storage_bucket": "eventmanagementsystem-b1886.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742223196820:android:d0c3b69e7078e04df83a81",
+        "android_client_info": {
+          "package_name": "com.example.eventmanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742223196820-91kcami18oiiqgavlb51ugsi1h4ohjo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBh0H9_204XM9uk3vJ-lxJsIt5hHxMjIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742223196820-91kcami18oiiqgavlb51ugsi1h4ohjo6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

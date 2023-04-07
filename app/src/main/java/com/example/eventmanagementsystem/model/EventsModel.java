@@ -17,4 +17,47 @@ public EventsModel(String eventId,String eventName,String eventDesc,String event
     this.eventVenue=eventVenue;
 
 }
+
+    public String getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public String getEventDesc() {
+        return eventDesc;
+    }
+
+    public void setEventDesc(String eventDesc) {
+        this.eventDesc = eventDesc;
+    }
+
+    public String getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(String eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public String getEventVenue() {
+        return eventVenue;
+    }
+
+    public void setEventVenue(String eventVenue) {
+        this.eventVenue = eventVenue;
+    }
+
+    public EventsModel() {
+    }
 }
