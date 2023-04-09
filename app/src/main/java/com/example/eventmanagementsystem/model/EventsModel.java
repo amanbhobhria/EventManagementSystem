@@ -6,15 +6,25 @@ public class EventsModel {
     private String eventDesc;
     private String eventDate;
     private String eventVenue;
+    private String registrations;
 
 
-public EventsModel(String eventId,String eventName,String eventDesc,String eventDate,String eventVenue)
+    public String getRegistrations() {
+        return registrations;
+    }
+
+    public void setRegistrations(String registrations) {
+        this.registrations = registrations;
+    }
+
+    public EventsModel(String eventId, String eventName, String eventDesc, String eventDate, String eventVenue, String registrations)
 {
     this.eventId=eventId;
     this.eventName=eventName;
     this.eventDesc=eventDesc;
     this.eventDate=eventDate;
     this.eventVenue=eventVenue;
+    this.registrations=registrations;
 
 }
 

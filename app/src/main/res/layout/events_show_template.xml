@@ -5,16 +5,17 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="22dp"
     android:orientation="horizontal"
-    android:background="#E9E8FA"
+    android:background="#D9D8E3"
     android:layout_marginTop="22dp"
     android:layout_marginRight="22dp">
 
 
     <LinearLayout
-        android:id="@+id/bookingsPreviewTemplate"
+        android:id="@+id/eventsPreviewTemplate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:background="#EF8B8B"
         android:orientation="vertical"
         >
 
@@ -54,7 +55,7 @@
 
 
             <TextView
-                android:id="@+id/dateSlotPrv"
+                android:id="@+id/eventIdTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

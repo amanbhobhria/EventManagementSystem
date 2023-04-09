@@ -88,8 +88,11 @@ class AdminActivity : AppCompatActivity(){
         eventsModel.eventName=eventName
         eventsModel.eventId=eventCode
         eventsModel.eventDesc=description
+        eventsModel.registrations=""
 
-        referenceHm!!.child("unievent").setValue(eventsModel)
+
+
+        referenceHm!!.child(eventCode).setValue(eventsModel)
 
         Toast.makeText(this, "Event created successfully!", Toast.LENGTH_SHORT).show()
 
