@@ -1,6 +1,7 @@
 package com.example.eventmanagementsystem
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 
@@ -19,6 +20,8 @@ class AdminActivity : AppCompatActivity(){
     private lateinit var venueEditText: EditText
     private lateinit var descriptionEditText: EditText
     private lateinit var dateEditText: EditText
+    private lateinit var  createEventButton: Button
+    lateinit var homeBtn: Button
 
 
     var firebaseDatabase: FirebaseDatabase? = null
@@ -35,15 +38,24 @@ class AdminActivity : AppCompatActivity(){
 
 
 
+         intitalize()
+
+
+        createEventButton.setOnClickListener { createEvent() }
+
+        goToHome()
+
+    }
+
+    fun intitalize()
+    {
         eventNameEditText = findViewById(R.id.edit_text_event)
         eventCodeEditText = findViewById(R.id.edit_text_event_code)
         venueEditText = findViewById(R.id.edit_text_venue)
         descriptionEditText = findViewById(R.id.edit_text_description)
         dateEditText = findViewById(R.id.edit_text_date)
-//        dateEditText.setOnClickListener { showDatePicker() }
-
-        val createEventButton: Button = findViewById(R.id.button_create_event)
-        createEventButton.setOnClickListener { createEvent() }
+        homeBtn = findViewById(R.id.goToHomeBtn)
+        createEventButton= findViewById(R.id.button_create_event)
     }
 
 //    private fun showDatePicker() {
@@ -96,6 +108,16 @@ class AdminActivity : AppCompatActivity(){
 
         Toast.makeText(this, "Event created successfully!", Toast.LENGTH_SHORT).show()
 
+    }
+
+
+    private fun goToHome()
+    {
+        homeBtn.setOnClickListener()
+        {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 

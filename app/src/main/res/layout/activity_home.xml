@@ -28,6 +28,13 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
+<Button
+    android:id="@+id/addNewEventBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Add New"
+    android:layout_marginLeft="200dp"
+    />
 
         </androidx.appcompat.widget.Toolbar>
 

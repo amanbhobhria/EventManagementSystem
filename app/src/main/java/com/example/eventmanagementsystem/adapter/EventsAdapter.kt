@@ -6,8 +6,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventmanagementsystem.R
 
@@ -52,6 +54,11 @@ class EventsAdapter(list: List<EventsModel>, context: Context) :
         holder.eventDesc.text = list[position].eventDesc
 
 
+        holder.registerBtn.setOnClickListener()
+        {
+            Toast.makeText(context,"Registered Successfully",Toast.LENGTH_SHORT).show()
+        }
+
 
 
     }
@@ -67,6 +74,7 @@ class EventsAdapter(list: List<EventsModel>, context: Context) :
         var eventVenue: TextView
         var eventId: TextView
         var eventDesc: TextView
+        var registerBtn: Button
 
 
         init {
@@ -76,6 +84,7 @@ class EventsAdapter(list: List<EventsModel>, context: Context) :
             eventVenue    = itemView.findViewById(R.id.venueTxt)
             eventId    = itemView.findViewById(R.id.eventIdTxt)
             eventDesc    = itemView.findViewById(R.id.eventDetailTxt)
+            registerBtn    = itemView.findViewById(R.id.registerEventBtn)
         }
     }
 }
