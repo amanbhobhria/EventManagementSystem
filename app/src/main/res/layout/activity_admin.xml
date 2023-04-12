@@ -1,18 +1,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="50dp"
-    tools:context=".AdminActivity">
-<Button
-    android:id="@+id/goToHomeBtn"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="HOME"
-    android:layout_marginLeft="14dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
     android:layout_marginBottom="20dp"
-    />
+    android:layout_marginLeft="20dp"
+    tools:context=".AdminActivity">
+
+    <Button
+        android:id="@+id/goToHomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,51 +30,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Event"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event: "
+            android:textSize="20sp"/>
 
-    <EditText
-        android:id="@+id/edit_text_event"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Event Code"/>
-
-    <EditText
-        android:id="@+id/edit_text_event_code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Venue"/>
-
-    <EditText
-        android:id="@+id/edit_text_venue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edit_text_event"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="52dp"
+            android:hint="      enter event"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -80,15 +50,56 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code: "
+            android:textSize="20sp"/>
 
-    <EditText
-        android:id="@+id/edit_text_description"
+        <EditText
+            android:id="@+id/edit_text_event_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dp"
+            android:hint="       enter code"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Venue: "
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/edit_text_venue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:hint="       enter venue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/edit_text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="      enter description"/>
     </LinearLayout>
 
     <LinearLayout
@@ -100,32 +111,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"/>
+            android:text="Date: "
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/edit_text_date"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:layout_marginLeft="57dp"
+            android:layout_height="wrap_content"
+            android:hint="      dd/MM/yyyy"/>
 
-        <ImageView
-            android:id="@+id/image_view_date_picker"
+        <ImageButton
+            android:id="@+id/image_button_date_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_calendar_month_24"/>
+            app:srcCompat="@drawable/baseline_calendar_month_24" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <Button
-        android:id="@+id/button_create_event"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create"
-        android:layout_gravity="right"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/button_create_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:layout_gravity="right"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -1,33 +1,31 @@
 package com.example.eventmanagementsystem
 
-
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
+import com.example.eventmanagementsystem.model.EventModel
 import com.example.eventmanagementsystem.model.EventsModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.*
 
-
-class AdminActivity : AppCompatActivity(){
+class AdminActivity : AppCompatActivity() {
 
     private lateinit var eventNameEditText: EditText
     private lateinit var eventCodeEditText: EditText
     private lateinit var venueEditText: EditText
     private lateinit var descriptionEditText: EditText
     private lateinit var dateEditText: EditText
-    private lateinit var  createEventButton: Button
     lateinit var homeBtn: Button
+    private lateinit var createEventButton: Button
+    private var selectedDate: Calendar = Calendar.getInstance()
 
-
-    var firebaseDatabase: FirebaseDatabase? = null
-    var referenceHm: DatabaseReference? = null
-
-
+    private var firebaseDatabase: FirebaseDatabase? = null
+    private var referenceHm: DatabaseReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,20 +33,11 @@ class AdminActivity : AppCompatActivity(){
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         referenceHm = firebaseDatabase!!.getReference("events")
-
-
-
-         intitalize()
-
-
+        intitalize()
         createEventButton.setOnClickListener { createEvent() }
-
         goToHome()
-
     }
-
-    fun intitalize()
-    {
+    fun intitalize(){
         eventNameEditText = findViewById(R.id.edit_text_event)
         eventCodeEditText = findViewById(R.id.edit_text_event_code)
         venueEditText = findViewById(R.id.edit_text_venue)
@@ -56,75 +45,65 @@ class AdminActivity : AppCompatActivity(){
         dateEditText = findViewById(R.id.edit_text_date)
         homeBtn = findViewById(R.id.goToHomeBtn)
         createEventButton= findViewById(R.id.button_create_event)
+        dateEditText.setOnClickListener { showDatePicker() }
+        val datePickerButton = findViewById<ImageButton>(R.id.image_button_date_picker)
+        datePickerButton.setOnClickListener { showDatePicker() }
+
+
+
     }
 
-//    private fun showDatePicker() {
-//        val calendar = Calendar.getInstance()
-//        val year = calendar.get(Calendar.YEAR)
-//        val month = calendar.get(Calendar.MONTH)
-//        val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-//        DatePickerDialog(this, this, year, month, dayOfMonth).show()
-//    }
-//
-//    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-//        val calendar = Calendar.getInstance()
-//        calendar.set(year, month, dayOfMonth)
-//        val selectedDate = calendar.time
-//        val formattedDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(selectedDate)
-//        dateEditText.setText(formattedDate)
-//    }
+    private fun showDatePicker() {
+        val datePicker = DatePickerDialog(
+            this,
+            { view: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
+                selectedDate.set(Calendar.YEAR, year)
+                selectedDate.set(Calendar.MONTH, month)
+                selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDateEditText()
+            },
+            selectedDate.get(Calendar.YEAR),
+            selectedDate.get(Calendar.MONTH),
+            selectedDate.get(Calendar.DAY_OF_MONTH)
+        )
+        datePicker.show()
+    }
+
+    private fun updateDateEditText() {
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        dateEditText.setText(dateFormat.format(selectedDate.time))
+    }
 
     private fun createEvent() {
-        val eventName = eventNameEditText.text.toString()
-        val eventCode = eventCodeEditText.text.toString()
-        val venue = venueEditText.text.toString()
-        val description = descriptionEditText.text.toString()
-        val date = dateEditText.text.toString()
+        val eventName = eventNameEditText.text.toString().trim()
+        val eventCode = eventCodeEditText.text.toString().trim()
+        val venue = venueEditText.text.toString().trim()
+        val description = descriptionEditText.text.toString().trim()
+        val date = dateEditText.text.toString().trim()
 
         if (eventName.isEmpty() || eventCode.isEmpty() || venue.isEmpty() || description.isEmpty() || date.isEmpty()) {
-            Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Get the selected date from the date picker
-//        val selectedDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(date)
-
-        // Create a new event object
-//        val event = Event(eventName, eventCode, venue, description, selectedDate)
-
-        // TODO: Save the event to the database
-
-        val eventsModel: EventsModel= EventsModel();
-        eventsModel.eventDate=date
-        eventsModel.eventVenue=venue
-        eventsModel.eventName=eventName
-        eventsModel.eventId=eventCode
-        eventsModel.eventDesc=description
-        eventsModel.registrations=""
-
-
-
-        referenceHm!!.child(eventCode).setValue(eventsModel)
-
-        Toast.makeText(this, "Event created successfully!", Toast.LENGTH_SHORT).show()
-
+        val eventModel = EventModel(eventName, eventCode, venue, description, date)
+        val reference = referenceHm!!.push()
+        val eventId = reference.key // get the unique identifier
+        reference.child(eventCode).setValue(eventModel)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Event created successfully", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Failed to create event", Toast.LENGTH_SHORT).show()
+            }
     }
 
-
-    private fun goToHome()
-    {
-        homeBtn.setOnClickListener()
-        {
+    private fun goToHome(){
+        homeBtn.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }
 
-
-
-
 }
-
-//class Event(eventName: String, eventCode: String, venue: String, description: String, selectedDate: Date?) {
-//
-//}
