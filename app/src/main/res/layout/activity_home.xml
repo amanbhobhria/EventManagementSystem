@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+    android:background="#E8834D"
     tools:context=".HomeActivity">
 
 
@@ -33,6 +34,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Add New"
+    android:textColor="@color/black"
+    android:backgroundTint="#E86017"
     android:layout_marginLeft="200dp"
     />
 
@@ -63,7 +66,7 @@
                 android:id="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#E67474"
+                android:background="#DC9A8A"
                 android:layout_marginTop="46dp"
                 app:itemTextColor="@color/black"
                 android:layout_marginBottom="4dp"
@@ -89,7 +92,7 @@
                 android:layout_below="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#8BC34A"
+                android:background="#F39665"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginStart="14dp"

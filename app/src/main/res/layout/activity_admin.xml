@@ -3,17 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="20dp"
-    android:layout_marginLeft="20dp"
+    android:layout_height="730dp"
+    android:background="#E8834D"
     tools:context=".AdminActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
     <Button
         android:id="@+id/goToHomeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="#E86017"
         android:text="HOME"
         />
 
@@ -126,6 +133,7 @@
             android:id="@+id/image_button_date_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#E8834D"
             app:srcCompat="@drawable/baseline_calendar_month_24" />
 
     </LinearLayout>
@@ -141,7 +149,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create"
+            android:textColor="@color/black"
+            android:backgroundTint="#E86017"
             android:layout_gravity="right"/>
     </LinearLayout>
-
+</LinearLayout>
 </LinearLayout>

@@ -15,6 +15,8 @@ import com.example.eventmanagementsystem.model.EventsModel
 import com.google.firebase.database.*
 
 class HomeActivity : AppCompatActivity() {
+    private val ChannelId="New Event Channel"
+    private val NotificationId= 123
     var progressBar: ProgressBar? = null
 
 
@@ -89,6 +91,8 @@ class HomeActivity : AppCompatActivity() {
 
             override fun onCancelled(error: DatabaseError) {}
         })
+
+
 
     }
 }
