@@ -92,7 +92,7 @@ class AdminActivity : AppCompatActivity() {
 //        val eventId = reference.key // get the unique identifier
         referenceHm?.child(eventCode)?.setValue(eventModel)
             ?.addOnSuccessListener {
-                Toast.makeText(this, "Event created successfully + evenid= "+eventCode, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Event created successfully", Toast.LENGTH_SHORT).show()
                 finish()
             }
             ?.addOnFailureListener {

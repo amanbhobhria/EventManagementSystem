@@ -56,7 +56,16 @@ class EventsAdapter(list: List<EventsModel>, context: Context) :
 
         holder.registerBtn.setOnClickListener()
         {
-            Toast.makeText(context,"Registered Successfully",Toast.LENGTH_SHORT).show()
+            if(  holder.registerBtn.text.equals("DeRegister"))
+            {
+                holder.registerBtn.setText("Register")
+                Toast.makeText(context,"Registered Successfully",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                holder.registerBtn.setText("DeRegister")
+                Toast.makeText(context,"DeRegistered Successfully",Toast.LENGTH_SHORT).show()
+            }
+
         }
 
 
