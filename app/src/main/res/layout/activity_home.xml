@@ -36,7 +36,7 @@
     android:text="Add New"
     android:textColor="@color/black"
     android:backgroundTint="#E86017"
-    android:layout_marginLeft="200dp"
+    android:layout_marginLeft="20dp"
     />
 
         </androidx.appcompat.widget.Toolbar>
