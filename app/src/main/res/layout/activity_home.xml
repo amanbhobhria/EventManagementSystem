@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-    android:background="#E8834D"
+    android:background="#ECE5E2"
     tools:context=".HomeActivity">
 
 
@@ -66,7 +66,7 @@
                 android:id="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#DC9A8A"
+                android:background="#D37660"
                 android:layout_marginTop="46dp"
                 app:itemTextColor="@color/black"
                 android:layout_marginBottom="4dp"
@@ -92,7 +92,7 @@
                 android:layout_below="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F39665"
+                android:background="#E6E3E1"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginStart="14dp"
