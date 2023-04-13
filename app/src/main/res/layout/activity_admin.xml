@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="730dp"
-    android:background="#E8834D"
+    android:background="#DFD8D5"
     tools:context=".AdminActivity">
 
     <LinearLayout
