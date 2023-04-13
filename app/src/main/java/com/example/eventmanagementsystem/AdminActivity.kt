@@ -75,6 +75,7 @@ class AdminActivity : AppCompatActivity() {
     }
 
     private fun createEvent() {
+
         val eventName = eventNameEditText.text.toString().trim()
         val eventCode = eventCodeEditText.text.toString().trim()
         val venue = venueEditText.text.toString().trim()
@@ -86,15 +87,15 @@ class AdminActivity : AppCompatActivity() {
             return
         }
 
-        val eventModel = EventModel(eventName, eventCode, venue, description, date)
-        val reference = referenceHm!!.push()
-        val eventId = reference.key // get the unique identifier
-        reference.child(eventCode).setValue(eventModel)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Event created successfully", Toast.LENGTH_SHORT).show()
+        val eventModel = EventModel(eventCode,eventName, description,date,venue)
+//        val reference = referenceHm!!.push()
+//        val eventId = reference.key // get the unique identifier
+        referenceHm?.child(eventCode)?.setValue(eventModel)
+            ?.addOnSuccessListener {
+                Toast.makeText(this, "Event created successfully + evenid= "+eventCode, Toast.LENGTH_SHORT).show()
                 finish()
             }
-            .addOnFailureListener {
+            ?.addOnFailureListener {
                 Toast.makeText(this, "Failed to create event", Toast.LENGTH_SHORT).show()
             }
     }
