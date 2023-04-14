@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.eventmanagementsystem.adapter.EventsAdapter
 import com.example.eventmanagementsystem.model.EventsModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
@@ -29,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
     var firebaseDatabase: FirebaseDatabase? = null
     var reference: DatabaseReference? = null
     var recyclerView: RecyclerView? = null
-    lateinit var addNewBtn: Button
+    lateinit var addNewBtn: FloatingActionButton
 
     var bottomNavigationView: BottomNavigationView? = null
 

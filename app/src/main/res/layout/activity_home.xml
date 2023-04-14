@@ -29,15 +29,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-<Button
-    android:id="@+id/addNewEventBtn"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Add New"
-    android:textColor="@color/black"
-    android:backgroundTint="#E86017"
-    android:layout_marginLeft="20dp"
-    />
+
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -102,6 +94,21 @@
 
 
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:id="@+id/addNewEventBtn"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="#D37660"
+                android:src="@drawable/ic_baseline_add_24"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="14dp"
+                />
+
+
+
         </RelativeLayout>
 
 
@@ -113,6 +120,8 @@
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header"
             app:menu="@menu/menu" />
+
+
 
 
 
