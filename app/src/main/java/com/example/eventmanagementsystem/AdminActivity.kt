@@ -35,7 +35,7 @@ class AdminActivity : AppCompatActivity() {
         referenceHm = firebaseDatabase!!.getReference("events")
         intitalize()
         createEventButton.setOnClickListener { createEvent() }
-        goToHome()
+//        goToHome()
     }
     fun intitalize(){
         eventNameEditText = findViewById(R.id.edit_text_event)
@@ -43,7 +43,7 @@ class AdminActivity : AppCompatActivity() {
         venueEditText = findViewById(R.id.edit_text_venue)
         descriptionEditText = findViewById(R.id.edit_text_description)
         dateEditText = findViewById(R.id.edit_text_date)
-        homeBtn = findViewById(R.id.goToHomeBtn)
+//        homeBtn = findViewById(R.id.goToHomeBtn)
         createEventButton= findViewById(R.id.button_create_event)
         dateEditText.setOnClickListener { showDatePicker() }
         val datePickerButton = findViewById<ImageButton>(R.id.image_button_date_picker)
@@ -100,11 +100,11 @@ class AdminActivity : AppCompatActivity() {
             }
     }
 
-    private fun goToHome(){
-        homeBtn.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }
-    }
+//    private fun goToHome(){
+//        homeBtn.setOnClickListener {
+//            val intent = Intent(this, HomeActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 
 }
