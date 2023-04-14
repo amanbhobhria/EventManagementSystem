@@ -27,15 +27,27 @@
                 android:value="" />
         </activity>
         <activity
+<<<<<<< Updated upstream
             android:name=".AdminActivity"
             android:exported="false" >
+=======
+
+            android:name=".HomeActivity"
+            android:exported="false">
+>>>>>>> Stashed changes
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
+<<<<<<< Updated upstream
             android:name=".HomeActivity"
             android:exported="true" >
+=======
+
+            android:name=".AdminActivity"
+            android:exported="true">
+>>>>>>> Stashed changes
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

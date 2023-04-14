@@ -1,11 +1,17 @@
 package com.example.eventmanagementsystem
 
 import android.app.DatePickerDialog
+<<<<<<< Updated upstream
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
+=======
+import android.os.Bundle
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+>>>>>>> Stashed changes
 import com.example.eventmanagementsystem.model.EventModel
 import com.example.eventmanagementsystem.model.EventsModel
 import com.google.firebase.database.DatabaseReference
@@ -24,6 +30,11 @@ class AdminActivity : AppCompatActivity() {
     private lateinit var createEventButton: Button
     private var selectedDate: Calendar = Calendar.getInstance()
 
+<<<<<<< Updated upstream
+=======
+    private var selectedDate: Calendar = Calendar.getInstance()
+
+>>>>>>> Stashed changes
     private var firebaseDatabase: FirebaseDatabase? = null
     private var referenceHm: DatabaseReference? = null
 
@@ -33,16 +44,21 @@ class AdminActivity : AppCompatActivity() {
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         referenceHm = firebaseDatabase!!.getReference("events")
+<<<<<<< Updated upstream
         intitalize()
         createEventButton.setOnClickListener { createEvent() }
 //        goToHome()
     }
     fun intitalize(){
+=======
+
+>>>>>>> Stashed changes
         eventNameEditText = findViewById(R.id.edit_text_event)
         eventCodeEditText = findViewById(R.id.edit_text_event_code)
         venueEditText = findViewById(R.id.edit_text_venue)
         descriptionEditText = findViewById(R.id.edit_text_description)
         dateEditText = findViewById(R.id.edit_text_date)
+<<<<<<< Updated upstream
 //        homeBtn = findViewById(R.id.goToHomeBtn)
         createEventButton= findViewById(R.id.button_create_event)
         dateEditText.setOnClickListener { showDatePicker() }
@@ -50,13 +66,23 @@ class AdminActivity : AppCompatActivity() {
         datePickerButton.setOnClickListener { showDatePicker() }
 
 
+=======
+        dateEditText.setOnClickListener { showDatePicker() }
+
+        val datePickerButton = findViewById<ImageButton>(R.id.image_button_date_picker)
+        datePickerButton.setOnClickListener { showDatePicker() }
+>>>>>>> Stashed changes
 
     }
 
     private fun showDatePicker() {
         val datePicker = DatePickerDialog(
             this,
+<<<<<<< Updated upstream
             { view: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
+=======
+            { _: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
+>>>>>>> Stashed changes
                 selectedDate.set(Calendar.YEAR, year)
                 selectedDate.set(Calendar.MONTH, month)
                 selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -75,7 +101,10 @@ class AdminActivity : AppCompatActivity() {
     }
 
     private fun createEvent() {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         val eventName = eventNameEditText.text.toString().trim()
         val eventCode = eventCodeEditText.text.toString().trim()
         val venue = venueEditText.text.toString().trim()
@@ -87,6 +116,7 @@ class AdminActivity : AppCompatActivity() {
             return
         }
 
+<<<<<<< Updated upstream
         val eventModel = EventModel(eventCode,eventName, description,date,venue)
 //        val reference = referenceHm!!.push()
 //        val eventId = reference.key // get the unique identifier
@@ -96,6 +126,17 @@ class AdminActivity : AppCompatActivity() {
                 finish()
             }
             ?.addOnFailureListener {
+=======
+        val eventModel = EventModel(eventName, eventCode, venue, description, date)
+        val reference = referenceHm!!.push()
+        val eventId = reference.key // get the unique identifier
+        reference.setValue(eventModel)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Event created successfully", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            .addOnFailureListener {
+>>>>>>> Stashed changes
                 Toast.makeText(this, "Failed to create event", Toast.LENGTH_SHORT).show()
             }
     }
@@ -107,4 +148,9 @@ class AdminActivity : AppCompatActivity() {
 //        }
 //    }
 
+<<<<<<< Updated upstream
 }
+=======
+
+}
+>>>>>>> Stashed changes
