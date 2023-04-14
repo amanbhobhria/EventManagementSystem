@@ -27,9 +27,7 @@
                 android:value="" />
         </activity>
         <activity
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
+
             android:name=".login"
             android:exported="false">
             <meta-data
@@ -50,38 +48,25 @@
         </activity>
         <activity
 
->>>>>>> Stashed changes
+
             android:name=".AdminActivity"
             android:exported="false" >
-=======
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
+        <activity
             android:name=".HomeActivity"
             android:exported="false">
->>>>>>> Stashed changes
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-<<<<<<< Updated upstream
-            android:name=".HomeActivity"
-            android:exported="true" >
-=======
-
-            android:name=".AdminActivity"
-            android:exported="true">
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-=======
->>>>>>> Stashed changes
-
 
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+   
 
         <service
             android:name=".sampledata.MyFirebaseMessagingService"

@@ -118,7 +118,7 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
-<<<<<<< Updated upstream
+
 
 
     private fun showBookings(status: String) {
