@@ -28,6 +28,29 @@
         </activity>
         <activity
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            android:name=".login"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Signup"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+
+>>>>>>> Stashed changes
             android:name=".AdminActivity"
             android:exported="false" >
 =======
@@ -47,12 +70,13 @@
 
             android:name=".AdminActivity"
             android:exported="true">
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+=======
+>>>>>>> Stashed changes
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"

@@ -1,6 +1,6 @@
 package com.example.eventmanagementsystem.model;
 
-public class EventsModel {
+public class EventsModel{
     private String eventId;
     private String eventName;
     private String eventDesc;
