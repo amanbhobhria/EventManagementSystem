@@ -3,26 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="730dp"
+<<<<<<< Updated upstream
+    android:layout_height="729dp"
     android:background="#DFD8D5"
+=======
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_marginRight="50dp"
+    android:layout_marginBottom="50dp"
+    android:layout_marginLeft="50dp"
+>>>>>>> Stashed changes
     tools:context=".AdminActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/back_bg"
+
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
+        android:paddingVertical="120dp"
+        android:paddingHorizontal="25dp"
         android:orientation="vertical">
-    <Button
-        android:id="@+id/goToHomeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:backgroundTint="#E86017"
-        android:text="HOME"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/goToHomeBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:backgroundTint="#ECA337"-->
+<!--        android:text="HOME"-->
+<!--        />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,6 +43,7 @@
         android:text="New Event"
         android:layout_gravity="center_horizontal"
         android:textSize="24sp"
+        android:textColor="@color/black"
         android:textStyle="bold"/>
 
     <LinearLayout
@@ -37,10 +51,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
+<<<<<<< Updated upstream
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Event: "
+            android:textColor="@color/black"
             android:textSize="20sp"/>
 
         <EditText
@@ -48,7 +64,20 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="52dp"
             android:hint="      enter event"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"/>
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event: "/>
+
+    <EditText
+        android:id="@+id/edit_text_event"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="36dp"
+        android:layout_height="wrap_content"/>
+>>>>>>> Stashed changes
 
     </LinearLayout>
 
@@ -57,10 +86,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+<<<<<<< Updated upstream
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Code: "
+            android:textColor="@color/black"
             android:textSize="20sp"/>
 
         <EditText
@@ -68,7 +99,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
+            android:textColor="@color/black"
             android:hint="       enter code"/>
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code: "/>
+
+    <EditText
+        android:id="@+id/edit_text_event_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"/>
+>>>>>>> Stashed changes
     </LinearLayout>
 
     <LinearLayout
@@ -76,10 +120,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+<<<<<<< Updated upstream
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Venue: "
+            android:textColor="@color/black"
             android:textSize="20sp"/>
 
         <EditText
@@ -87,7 +133,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="42dp"
+            android:textColor="@color/black"
             android:hint="       enter venue"/>
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Venue: "/>
+
+    <EditText
+        android:id="@+id/edit_text_venue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31dp"/>
+>>>>>>> Stashed changes
 
     </LinearLayout>
 
@@ -96,16 +155,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+<<<<<<< Updated upstream
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description: "
+            android:textColor="@color/black"
             android:textSize="20sp"/>
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description: "/>
+>>>>>>> Stashed changes
 
         <EditText
             android:id="@+id/edit_text_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:hint="      enter description"/>
     </LinearLayout>
 
@@ -118,22 +186,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< Updated upstream
             android:text="Date: "
+            android:textColor="@color/black"
             android:textSize="20sp"/>
+=======
+            android:text="Date: "/>
+>>>>>>> Stashed changes
 
         <EditText
             android:id="@+id/edit_text_date"
             android:layout_width="match_parent"
             android:layout_weight="1"
+<<<<<<< Updated upstream
             android:layout_marginLeft="57dp"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:hint="      dd/MM/yyyy"/>
+=======
+            android:layout_marginLeft="38dp"
+            android:layout_height="wrap_content"/>
+>>>>>>> Stashed changes
 
         <ImageButton
             android:id="@+id/image_button_date_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#E8834D"
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
             app:srcCompat="@drawable/baseline_calendar_month_24" />
 
     </LinearLayout>
@@ -150,7 +232,7 @@
             android:layout_height="wrap_content"
             android:text="Create"
             android:textColor="@color/black"
-            android:backgroundTint="#E86017"
+            android:backgroundTint="#ECA337"
             android:layout_gravity="right"/>
     </LinearLayout>
 </LinearLayout>

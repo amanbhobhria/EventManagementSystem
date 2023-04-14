@@ -13,4 +13,16 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="edit_text_layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="hintTextColor">#808080</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="cornerRadius">18dp</item>
+    <item name="startIconTint">#694004</item>
+
+    <item name="strokeColor">#694004</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="boxStrokeWidth">2dp</item>
+    <item name="boxStrokeWidthFocused">2dp</item>
+    </style>
 </resources>
