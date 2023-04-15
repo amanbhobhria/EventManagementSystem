@@ -18,7 +18,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationBarView
 
-import com.google.firebase.auth.FirebaseAuth
+//import com.google.firebase.auth.FirebaseAuth
+
 
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
@@ -29,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
     private val NotificationId= 123
 
     var progressBar: ProgressBar? = null
-    lateinit var firebase : FirebaseAuth
+//    lateinit var firebase : FirebaseAuth
 
     var firebaseDatabase: FirebaseDatabase? = null
     var reference: DatabaseReference? = null
@@ -49,7 +50,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         firebaseDatabase = FirebaseDatabase.getInstance()
-        firebase =FirebaseAuth.getInstance()
+//        firebase =FirebaseAuth.getInstance()
         reference = firebaseDatabase!!.getReference("events")
 
 
