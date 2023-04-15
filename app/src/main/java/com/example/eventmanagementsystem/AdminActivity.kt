@@ -55,6 +55,7 @@ class AdminActivity : AppCompatActivity() {
         descriptionEditText = findViewById(R.id.edit_text_description)
         dateEditText = findViewById(R.id.edit_text_date)
 
+
         homeBtn = findViewById(R.id.goToHomeBtn)
         createEventButton= findViewById(R.id.button_create_event)
         dateEditText.setOnClickListener { showDatePicker() }

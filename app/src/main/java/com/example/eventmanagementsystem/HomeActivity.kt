@@ -6,16 +6,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventmanagementsystem.adapter.EventsAdapter
@@ -24,8 +21,7 @@ import com.example.eventmanagementsystem.model.EventsModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationBarView
-
-//import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.navigation.NavigationView
 
 
 import com.google.firebase.database.*
@@ -33,6 +29,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeActivity : AppCompatActivity() {
+
+
     private val ChannelId="New Event Channel"
     private val NotificationId= 123
 
@@ -72,8 +70,25 @@ class HomeActivity : AppCompatActivity() {
         bottomNavigation()
         recyclerView!!.layoutManager = LinearLayoutManager(this)
         popupnotification()
+        sideNav()
 
 
+    }
+
+    private fun sideNav() {
+        val navigationView = findViewById<NavigationView>(R.id.nav_menu)
+        navigationView.setNavigationItemSelectedListener { item ->
+            if (item.itemId == R.id.profile) {
+                Toast.makeText(this@HomeActivity, "Home", Toast.LENGTH_SHORT).show()
+            } else if (item.itemId == R.id.events) {
+                Toast.makeText(this@HomeActivity, "Events", Toast.LENGTH_SHORT).show()
+            } else if (item.itemId == R.id.myReg) {
+                Toast.makeText(this@HomeActivity, "My Registrations", Toast.LENGTH_SHORT).show()
+            } else if (item.itemId == R.id.logout) {
+                Toast.makeText(this@HomeActivity, "Logout", Toast.LENGTH_SHORT).show()
+            }
+            false
+        }
     }
 
 
@@ -249,6 +264,8 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
+
+
 
 
 //
