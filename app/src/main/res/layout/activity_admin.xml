@@ -20,14 +20,14 @@
         android:paddingHorizontal="25dp"
         android:orientation="vertical">
 
-        <!--    <Button-->
-        <!--        android:id="@+id/goToHomeBtn"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:textColor="@color/black"-->
-        <!--        android:backgroundTint="#ECA337"-->
-        <!--        android:text="HOME"-->
-        <!--        />-->
+            <Button
+                android:id="@+id/goToHomeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:backgroundTint="#ECA337"
+                android:text="HOME"
+                />
 
         <TextView
             android:layout_width="wrap_content"

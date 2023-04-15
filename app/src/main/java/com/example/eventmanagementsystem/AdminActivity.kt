@@ -2,17 +2,13 @@ package com.example.eventmanagementsystem
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.media.MediaSyncEvent.createEvent
 import android.os.Build
 import android.os.Bundle
 import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
 
-import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
-import com.example.eventmanagementsystem.model.EventModel
 import com.example.eventmanagementsystem.model.EventsModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -46,7 +42,7 @@ class AdminActivity : AppCompatActivity() {
 
         intitalize()
         createEventButton.setOnClickListener { createEvent() }
-//        goToHome()
+        goToHome()
     }
     @RequiresApi(Build.VERSION_CODES.N)
     fun intitalize(){
@@ -59,7 +55,7 @@ class AdminActivity : AppCompatActivity() {
         descriptionEditText = findViewById(R.id.edit_text_description)
         dateEditText = findViewById(R.id.edit_text_date)
 
-//        homeBtn = findViewById(R.id.goToHomeBtn)
+        homeBtn = findViewById(R.id.goToHomeBtn)
         createEventButton= findViewById(R.id.button_create_event)
         dateEditText.setOnClickListener { showDatePicker() }
         val datePickerButton = findViewById<ImageButton>(R.id.image_button_date_picker)
@@ -111,37 +107,30 @@ class AdminActivity : AppCompatActivity() {
         }
 
 
-        val eventModel = EventModel(eventCode,eventName, description,date,venue)
-//        val reference = referenceHm!!.push()
-//        val eventId = reference.key // get the unique identifier
+        val eventModel = EventsModel(eventCode,eventName, description,date,venue)
+
         referenceHm?.child(eventCode)?.setValue(eventModel)
             ?.addOnSuccessListener {
                 Toast.makeText(this, "Event created successfully", Toast.LENGTH_SHORT).show()
                 finish()
             }
             ?.addOnFailureListener {
-        val eventModel = EventModel(eventName, eventCode, venue, description, date)
-        val reference = referenceHm!!.push()
-        val eventId = reference.key // get the unique identifier
-        reference.setValue(eventModel)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Event created successfully", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-            .addOnFailureListener {
                 Toast.makeText(this, "Failed to create event", Toast.LENGTH_SHORT).show()
             }
+
+
     }
 
-//    private fun goToHome(){
-//        homeBtn.setOnClickListener {
-//            val intent = Intent(this, HomeActivity::class.java)
-//            startActivity(intent)
-//        }
-//    }
-
-}
 
 
-}
+    private fun goToHome(){
+        homeBtn.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+
+        }}}
+
+
+
+
 

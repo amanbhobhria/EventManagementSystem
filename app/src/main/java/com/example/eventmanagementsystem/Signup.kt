@@ -56,8 +56,8 @@ class Signup : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(firebase.currentUser != null){
-            startActivity(Intent(this, HomeActivity::class.java))
-            Toast.makeText(this, "Already Login", Toast.LENGTH_SHORT).show()
+//            startActivity(Intent(this, HomeActivity::class.java))
+//            Toast.makeText(this, "Already Login", Toast.LENGTH_SHORT).show()
         }
 
     }
