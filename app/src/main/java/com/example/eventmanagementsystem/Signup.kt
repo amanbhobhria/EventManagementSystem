@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.eventmanagementsystem.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 class Signup : AppCompatActivity() {
     lateinit var  firebase : FirebaseAuth
@@ -44,7 +45,9 @@ class Signup : AppCompatActivity() {
                     }
                 }
             }
-            else Toast.makeText(this, "Password and Confirm password does not match", Toast.LENGTH_SHORT).show()
+            else {
+                Toast.makeText(this, "Password and Confirm password does not match", Toast.LENGTH_SHORT).show()
+            }
         }
         else Toast.makeText(this, "Please fill all the details ", Toast.LENGTH_SHORT).show()
 
