@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.eventmanagementsystem.common.Common
 
 import com.google.firebase.auth.FirebaseAuth
 
@@ -14,6 +15,7 @@ class login : AppCompatActivity() {
     lateinit var pass : TextView
     lateinit var btn : TextView
     lateinit var firebase : FirebaseAuth
+//     lateinit  var common : Common
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +45,10 @@ class login : AppCompatActivity() {
 
 
         if(email.isNotEmpty()  && pass.isNotEmpty()){
+//            common.username=email
             firebase.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this){
                 if (it.isSuccessful){
+                    intent.putExtra("key", email);
                     startActivity(Intent(this, HomeActivity::class.java))
                 }
                 else

@@ -1,5 +1,6 @@
 package com.example.eventmanagementsystem
 
+
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -8,22 +9,22 @@ import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventmanagementsystem.adapter.EventsAdapter
+import com.example.eventmanagementsystem.common.Common
 import com.example.eventmanagementsystem.model.EventsModel
-
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
-
-
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -31,8 +32,9 @@ import java.util.*
 class HomeActivity : AppCompatActivity() {
 
 
-    private val ChannelId="New Event Channel"
-    private val NotificationId= 123
+
+   
+
 
     var progressBar: ProgressBar? = null
     var CHANNEL_ID = "my_channel_id"
@@ -45,6 +47,7 @@ class HomeActivity : AppCompatActivity() {
     var reference: DatabaseReference? = null
     var recyclerView: RecyclerView? = null
     lateinit var addNewBtn: FloatingActionButton
+    lateinit var openSideNavBtn: ImageButton
 
     var bottomNavigationView: BottomNavigationView? = null
 
@@ -52,11 +55,17 @@ class HomeActivity : AppCompatActivity() {
     private val recent = "recent"
     private val upcoming = "upcoming"
     private val completed = "completed"
+    private var value = "default"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+       val extras = intent.extras
+        if (extras != null) {
+             value = extras.getString("key").toString()
+        }
 
 
         firebaseDatabase = FirebaseDatabase.getInstance()
@@ -77,9 +86,28 @@ class HomeActivity : AppCompatActivity() {
 
     private fun sideNav() {
         val navigationView = findViewById<NavigationView>(R.id.nav_menu)
+
+        val drawer = findViewById<DrawerLayout>(R.id.my_drawer_layout)
+
+        openSideNavBtn.setOnClickListener()
+        {
+            drawer.openDrawer(navigationView)
+        }
+
+
+
+
+
         navigationView.setNavigationItemSelectedListener { item ->
             if (item.itemId == R.id.profile) {
-                Toast.makeText(this@HomeActivity, "Home", Toast.LENGTH_SHORT).show()
+                try {
+
+                    Toast.makeText(this@HomeActivity, value, Toast.LENGTH_SHORT).show()
+                }
+                catch (e:Exception)
+                {
+                    Toast.makeText(this@HomeActivity, e.toString(), Toast.LENGTH_SHORT).show()
+                }
             } else if (item.itemId == R.id.events) {
                 Toast.makeText(this@HomeActivity, "Events", Toast.LENGTH_SHORT).show()
             } else if (item.itemId == R.id.myReg) {
@@ -96,6 +124,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         addNewBtn=findViewById(R.id.addNewEventBtn)
+        openSideNavBtn=findViewById(R.id.openDrawerBtn)
         recyclerView = findViewById(R.id.showOnGoingRecyclerView)
 
         progressBar = findViewById(R.id.loadingProgressBar)
@@ -189,6 +218,8 @@ class HomeActivity : AppCompatActivity() {
 
 
     private fun bottomNavigation() {
+
+
         bottomNavigationView?.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item: MenuItem ->
             if (item.itemId == R.id.bottom_nav_upcoming) {
                 try {
