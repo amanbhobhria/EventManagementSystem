@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-   
+
 
 
     var progressBar: ProgressBar? = null
@@ -55,7 +55,7 @@ class HomeActivity : AppCompatActivity() {
     private val recent = "recent"
     private val upcoming = "upcoming"
     private val completed = "completed"
-    private var value = "default"
+    private var value="user"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -113,7 +113,9 @@ class HomeActivity : AppCompatActivity() {
             } else if (item.itemId == R.id.myReg) {
                 Toast.makeText(this@HomeActivity, "My Registrations", Toast.LENGTH_SHORT).show()
             } else if (item.itemId == R.id.logout) {
-                Toast.makeText(this@HomeActivity, "Logout", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Logout Successfully", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, login::class.java)
+                startActivity(intent)
             }
             false
         }
@@ -137,7 +139,14 @@ class HomeActivity : AppCompatActivity() {
 
 
     private fun addNewEvent()
+
+
     {
+
+        if(value=="admin@gmail.com")
+        {
+            addNewBtn.visibility=View.VISIBLE
+        }
         addNewBtn.setOnClickListener()
         {
             val intent = Intent(this, AdminActivity::class.java)

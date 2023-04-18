@@ -48,8 +48,11 @@ class login : AppCompatActivity() {
 //            common.username=email
             firebase.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this){
                 if (it.isSuccessful){
+
+                    val intent = Intent(this, HomeActivity::class.java)
                     intent.putExtra("key", email);
-                    startActivity(Intent(this, HomeActivity::class.java))
+                    startActivity(intent)
+
                 }
                 else
                     Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()

@@ -20,7 +20,7 @@
                 android:id="@+id/openDrawerBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/baseline_app_registration_24"
+                android:src="@drawable/baseline_view_headline_24"
                 />
 
             <TextView
@@ -64,7 +64,7 @@
                 android:id="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#D37660"
+                android:background="#ECA337"
                 android:layout_marginTop="46dp"
                 app:itemTextColor="@color/black"
                 android:layout_marginBottom="4dp"
@@ -104,9 +104,10 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/addNewEventBtn"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="12dp"
-                android:backgroundTint="#D37660"
+                android:backgroundTint="#ECA337"
                 android:src="@drawable/ic_baseline_add_24"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="20dp"

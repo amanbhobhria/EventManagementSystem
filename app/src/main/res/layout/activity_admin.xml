@@ -1,11 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="729dp"
     android:background="#DFD8D5"
     tools:context=".AdminActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
 
     <LinearLayout
@@ -115,6 +121,8 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
+
+
             <EditText
                 android:id="@+id/edit_text_description"
                 android:layout_width="match_parent"
@@ -167,3 +175,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>
