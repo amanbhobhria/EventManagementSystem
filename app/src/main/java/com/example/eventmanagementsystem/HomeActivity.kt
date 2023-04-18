@@ -300,7 +300,7 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
-    
+
 
 }
 
