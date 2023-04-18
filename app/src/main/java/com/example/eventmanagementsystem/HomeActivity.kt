@@ -32,10 +32,6 @@ import java.util.*
 class HomeActivity : AppCompatActivity() {
 
 
-
-
-
-
     var progressBar: ProgressBar? = null
     var CHANNEL_ID = "my_channel_id"
     var b=false;
@@ -109,9 +105,9 @@ class HomeActivity : AppCompatActivity() {
                     Toast.makeText(this@HomeActivity, e.toString(), Toast.LENGTH_SHORT).show()
                 }
             } else if (item.itemId == R.id.events) {
-                Toast.makeText(this@HomeActivity, "Events", Toast.LENGTH_SHORT).show()
+                drawer.closeDrawer(navigationView)
             } else if (item.itemId == R.id.myReg) {
-                Toast.makeText(this@HomeActivity, "My Registrations", Toast.LENGTH_SHORT).show()
+              Toast.makeText(this@HomeActivity, "My Registrations", Toast.LENGTH_SHORT).show()
             } else if (item.itemId == R.id.logout) {
                 Toast.makeText(this@HomeActivity, "Logout Successfully", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, login::class.java)
@@ -304,11 +300,7 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
-
-
-
-
-//
+    
 
 }
 
