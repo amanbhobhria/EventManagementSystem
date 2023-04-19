@@ -12,14 +12,15 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventmanagementsystem.adapter.EventsAdapter
-import com.example.eventmanagementsystem.common.Common
 import com.example.eventmanagementsystem.model.EventsModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -43,7 +44,8 @@ class HomeActivity : AppCompatActivity() {
     var reference: DatabaseReference? = null
     var recyclerView: RecyclerView? = null
     lateinit var addNewBtn: FloatingActionButton
-    lateinit var openSideNavBtn: ImageButton
+    lateinit var  drawer: DrawerLayout
+    lateinit var  navigationView:NavigationView
 
     var bottomNavigationView: BottomNavigationView? = null
 
@@ -58,17 +60,29 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        initialize()
+
+
        val extras = intent.extras
         if (extras != null) {
              value = extras.getString("key").toString()
         }
 
 
+        var toolbar: Toolbar = findViewById(R.id.toolbar)
+        var actionBarDrawerToggle = ActionBarDrawerToggle(this,drawer,toolbar,
+            R.string.navigation_drawer_open,R.string.navigation_drawer_close)
+        drawer.addDrawerListener(actionBarDrawerToggle)
+        actionBarDrawerToggle.syncState()
+
+
+
+
         firebaseDatabase = FirebaseDatabase.getInstance()
         reference = firebaseDatabase!!.getReference("events")
 
 
-        initialize()
+
 
 
         addNewEvent()
@@ -81,14 +95,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun sideNav() {
-        val navigationView = findViewById<NavigationView>(R.id.nav_menu)
 
-        val drawer = findViewById<DrawerLayout>(R.id.my_drawer_layout)
 
-        openSideNavBtn.setOnClickListener()
-        {
-            drawer.openDrawer(navigationView)
-        }
 
 
 
@@ -97,6 +105,18 @@ class HomeActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { item ->
             if (item.itemId == R.id.profile) {
                 try {
+                    if(value=="admin@gmail.com")
+                    {
+                        val intent = Intent(this, ProfileAdminActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else{
+
+                        val intent = Intent(this, ProfileUserActivity::class.java)
+                        intent.putExtra("key", value);
+                        startActivity(intent)
+                    }
+
 
                     Toast.makeText(this@HomeActivity, value, Toast.LENGTH_SHORT).show()
                 }
@@ -107,11 +127,23 @@ class HomeActivity : AppCompatActivity() {
             } else if (item.itemId == R.id.events) {
                 drawer.closeDrawer(navigationView)
             } else if (item.itemId == R.id.myReg) {
+                val intent = Intent(this, MyRegistrationsActivity::class.java)
+                startActivity(intent)
               Toast.makeText(this@HomeActivity, "My Registrations", Toast.LENGTH_SHORT).show()
             } else if (item.itemId == R.id.logout) {
-                Toast.makeText(this@HomeActivity, "Logout Successfully", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, login::class.java)
-                startActivity(intent)
+
+
+                try {
+                    val intent = Intent(this, login::class.java)
+                    startActivity(intent)
+                    Toast.makeText(this@HomeActivity, "Logout Successfully", Toast.LENGTH_SHORT)
+                        .show()
+                }
+                catch (e:Exception)
+                {
+                    Toast.makeText(this@HomeActivity, e.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
             false
         }
@@ -122,13 +154,16 @@ class HomeActivity : AppCompatActivity() {
 
 
         addNewBtn=findViewById(R.id.addNewEventBtn)
-        openSideNavBtn=findViewById(R.id.openDrawerBtn)
         recyclerView = findViewById(R.id.showOnGoingRecyclerView)
 
         progressBar = findViewById(R.id.loadingProgressBar)
         bottomNavigationView = findViewById(R.id.bottom_nav)
 
         context= applicationContext
+
+        drawer = findViewById(R.id.my_drawer_layout)
+        navigationView = findViewById(R.id.nav_menu)
+
 
 
     }

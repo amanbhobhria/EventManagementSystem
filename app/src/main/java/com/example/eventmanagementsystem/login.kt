@@ -15,7 +15,6 @@ class login : AppCompatActivity() {
     lateinit var pass : TextView
     lateinit var btn : TextView
     lateinit var firebase : FirebaseAuth
-//     lateinit  var common : Common
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
