@@ -66,6 +66,8 @@ class EventsAdapter(list: List<EventsModel>, context: Context) :
                 Toast.makeText(context,"DeRegistered Successfully",Toast.LENGTH_SHORT).show()
             }
 
+
+
         }
 
 

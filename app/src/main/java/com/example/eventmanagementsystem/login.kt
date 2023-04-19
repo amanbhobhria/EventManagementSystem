@@ -40,13 +40,15 @@ class login : AppCompatActivity() {
     private fun login(){
 
         var email = name.text.toString()
+
         var pass  = pass.text.toString()
 
 
         if(email.isNotEmpty()  && pass.isNotEmpty()){
-//            common.username=email
             firebase.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this){
                 if (it.isSuccessful){
+
+
 
                     val intent = Intent(this, HomeActivity::class.java)
                     intent.putExtra("key", email);

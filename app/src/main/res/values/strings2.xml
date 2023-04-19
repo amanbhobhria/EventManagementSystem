@@ -2,6 +2,6 @@
     <string name="app_name">TechEase</string>
     <string name="alredy_have_and_account">Forget your password ?<font color="#694004"> Reset</font></string>
     <string name="already">Already have an account ?<font color="#694004"> Login</font></string>
-    <string name="create">Dont\'t have account ?<font color="#694004"> Sign-In</font></string>
+    <string name="create">Dont\'t have account ?<font color="#694004"> Sign-Up</font></string>
 
 </resources>
