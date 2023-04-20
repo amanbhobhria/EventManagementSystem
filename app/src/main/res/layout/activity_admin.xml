@@ -2,7 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="729dp"
+    android:layout_height="match_parent"
+
     android:background="#DFD8D5"
     tools:context=".AdminActivity">
 
@@ -14,17 +15,17 @@
         >
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/back_bg"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:paddingVertical="120dp"
-        android:paddingHorizontal="25dp"
-        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_bg"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:paddingVertical="50dp"
+            android:paddingHorizontal="25dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/goToHomeBtn"
@@ -35,132 +36,132 @@
                 android:text="HOME"
                 />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Event"
-            android:layout_gravity="center_horizontal"
-            android:textSize="24sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Event: "
+                android:text="New Event"
+                android:layout_gravity="center_horizontal"
+                android:textSize="24sp"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textStyle="bold"/>
 
-            <EditText
-                android:id="@+id/edit_text_event"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="52dp"
-                android:hint="      enter event"
-                android:textColor="@color/black"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Code: "
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-            <EditText
-                android:id="@+id/edit_text_event_code"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="52dp"
-                android:textColor="@color/black"
-                android:hint="       enter code"/>
-        </LinearLayout>
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Event: "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edit_text_event"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="52dp"
+                    android:hint="enter event"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Venue: "
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/edit_text_venue"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="42dp"
-                android:textColor="@color/black"
-                android:hint="       enter venue"/>
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Code: "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edit_text_event_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="52dp"
+                    android:textColor="@color/black"
+                    android:hint="enter code"/>
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description: "
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-
-
-            <EditText
-                android:id="@+id/edit_text_description"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:hint="      enter description"/>
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Venue: "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date: "
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
+                <EditText
+                    android:id="@+id/edit_text_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="42dp"
+                    android:textColor="@color/black"
+                    android:hint="enter venue"/>
 
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/edit_text_date"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_marginLeft="57dp"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:hint="      dd/MM/yyyy"/>
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/image_button_date_picker"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description: "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+
+
+                <EditText
+                    android:id="@+id/edit_text_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="enter description"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#ECA337"
-                app:srcCompat="@drawable/baseline_calendar_month_24" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date: "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/image_button_date_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/baseline_calendar_month_24" />
+
+                <EditText
+                    android:id="@+id/edit_text_date"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:hint="dd/MM/yyyy"/>
+
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/button_create_event"
@@ -172,7 +173,7 @@
                 android:textColor="@color/black" />
 
 
-    </LinearLayout>
+        </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

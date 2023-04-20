@@ -59,11 +59,12 @@ class EventsAdapter(list: List<EventsModel>, context: Context) :
             if(  holder.registerBtn.text.equals("DeRegister"))
             {
                 holder.registerBtn.setText("Register")
-                Toast.makeText(context,"Registered Successfully",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"DeRegistered Successfully",Toast.LENGTH_SHORT).show()
             }
             else{
                 holder.registerBtn.setText("DeRegister")
-                Toast.makeText(context,"DeRegistered Successfully",Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(context,"Registered Successfully",Toast.LENGTH_SHORT).show()
             }
 
 

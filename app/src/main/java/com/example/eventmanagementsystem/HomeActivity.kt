@@ -1,15 +1,16 @@
 package com.example.eventmanagementsystem
 
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -29,6 +30,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -54,6 +56,16 @@ class HomeActivity : AppCompatActivity() {
     private val upcoming = "upcoming"
     private val completed = "completed"
     private var value="user"
+
+
+    val SHARED_PREFS = "shared_prefs"
+
+    // key for storing email.
+    val MESSAGE_KEY = "useremail"
+
+    // variable for shared preferences.
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,6 +103,21 @@ class HomeActivity : AppCompatActivity() {
         popupnotification()
         sideNav()
 
+        saveSharedPref()
+
+
+
+
+
+    }
+
+    @SuppressLint("CommitPrefEdits")
+    private fun saveSharedPref() {
+        val sharedPreference =  getSharedPreferences("PREFERENCE_USERS",Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        editor.putString(MESSAGE_KEY, value);
+        editor.commit()
+
 
     }
 
@@ -118,7 +145,7 @@ class HomeActivity : AppCompatActivity() {
                     }
 
 
-                    Toast.makeText(this@HomeActivity, value, Toast.LENGTH_SHORT).show()
+
                 }
                 catch (e:Exception)
                 {
@@ -130,7 +157,24 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(this, MyRegistrationsActivity::class.java)
                 startActivity(intent)
               Toast.makeText(this@HomeActivity, "My Registrations", Toast.LENGTH_SHORT).show()
-            } else if (item.itemId == R.id.logout) {
+            }
+            else if (item.itemId == R.id.shareApp) {
+
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+                    type = "text/plain"
+                }
+
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+
+
+
+            }
+
+
+            else if (item.itemId == R.id.logout) {
 
 
                 try {
@@ -163,6 +207,8 @@ class HomeActivity : AppCompatActivity() {
 
         drawer = findViewById(R.id.my_drawer_layout)
         navigationView = findViewById(R.id.nav_menu)
+
+
 
 
 
